@@ -1,6 +1,6 @@
 # 03 CSS variable
 
-## var() && property notation
+## var(),  property notation
 
 커스텀 속성 표기법인 -- 를 이용해서 커스텀 속성을 지정하고, `var()` 함수로 사용하면된다.
 `:root` pseudo-class에 커스텀 속성을 표시해주는 것이 가장 좋다.
@@ -16,4 +16,4 @@ h1 {
 ## querySelctorAll
 
 NodeList를 return 한다
-Array 아님 (parray 메소드 못씀)
+Array 아님 (array 메소드 못씀)
