@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HTML5 Canvas</title>
-</head>
-<body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-</script>
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML5 Canvas</title>
+	</head>
+	<body>
+		<canvas id="draw" width="800" height="800"></canvas>
+		<script>
+			const canvas = document.getElementById('draw')
+			const ctx = canvas.getContext('2d')
+			//캔버스가 전체화면
+			canvas.width = window.innerWidth
+			canvas.height = window.innerHeight
+			//라인 색상
+			ctx.strokeStyle = '#bada55'
+			//라인 끝
+			ctx.lineJoin = 'round'
+			ctx.lineCap = 'round'
+      ctx.lineWidth = 50
+      
+      //ctx.globalCompositeOperation = 'multiply'
+			
+      let isDrawing = false
+			//마우스 누르고 있을 때만 true 시킬 거니깐
+			let lastX = 0
+			let lastY = 0
+			//라인 그릴때는 시작 x,y, 마지막 x,y가 필요함
+      let hue = 0
+      let direction = true 
 
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
+			function draw(e) {
+				if (!isDrawing) return
+				//라인 그리기
+        ctx.strokeStyle=`hsl(${hue}, 100%, 50%)`
+				ctx.beginPath()
+				ctx.moveTo(lastX, lastY)
+				ctx.lineTo(e.offsetX, e.offsetY)
+				ctx.stroke(); // ; 빼니깐 제대로 안됨 
+        //destructuring
+				[lastX, lastY] = [e.offsetX, e.offsetY]
+        hue++
+        if(hue>=360){ hue = 0}
+        if(ctx.lineWidth >=150|| ctx.lineWidth <=10){
+          direction = !direction
+        }
+        if(direction){
+          ctx.lineWidth++
+        }else {
+          ctx.lineWidth--
+        }
+      }
 
-</body>
+			canvas.addEventListener('mousemove', draw)
+			canvas.addEventListener('mousedown', (e) =>{
+        isDrawing = true;
+      	[lastX, lastY] = [e.offsetX, e.offsetY]
+			
+      })
+			canvas.addEventListener('mouseup', () => (isDrawing = false))
+			canvas.addEventListener('mouseout', () => (isDrawing = false))
+		</script>
+
+		<style>
+			html,
+			body {
+				margin: 0;
+			}
+		</style>
+	</body>
 </html>
