@@ -15,7 +15,9 @@ contextType 다음과 같은 것들이 들어갈 수 있다.
 
 ## hsl
 hue, saturation, lightness 
-(mother-effing hsl)[https://mothereffinghsl.com]\
+
+[mother-effing hsl 사이트 이동하기](https://mothereffinghsl.com)
+
 hue는 0 (빨강) 에서 시작해서 색이 변하여 360이 되면 다시 빨강이 됨 \
 saturation 채도, %로 나타냄\
 lightness 밝기, %로 나타냄
