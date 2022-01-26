@@ -18,29 +18,50 @@
     }
 
     // Regular
-
+    console.log('hello')
     // Interpolated
-
+    console.log('hello i am a %s string!', '##')
+    //이제 백틱 생겨서 크게 안쓰긴 할듯
+    
     // Styled
-
+    console.log('%c i am font size', 'font-size:30px;')
     // warning!
-
+    console.warn('warning man')
     // Error :|
+    console.error('shit')
 
     // Info
-
+    console.info('fun fact ...?')
+    
     // Testing
-
-    // clearing
-
+  console.assert(1===2, 'wrong') //틀릴때만 나옴
+    
+  // clearing
+    console.clear()
     // Viewing DOM Elements
+   // console.dir()
 
+
+   console.clear()
     // Grouping together
-
+    dogs.forEach(dog => {
+    console.group(`${dog.name}`)
+    console.log(`this is ${dog.name}`)
+    console.log(`${dog.name} is ${dog.age} years old`)
+    console.groupEnd(`${dog.name}`)
+    })
+  
     // counting
+    console.count('wes')
+    console.count('wes')
+    console.count('k')
+    console.count('k')
+    // timing 시간 얼마나 걸리는지 확인할 수 있음
+    console.time('fetching data')
+    //fetching작업 중간에 해주고 
+    console.timeEnd('fetching data')
 
-    // timing
-
+    console.table(dogs)
   </script>
 </body>
 </html>
