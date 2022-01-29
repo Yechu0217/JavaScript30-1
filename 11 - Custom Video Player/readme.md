@@ -11,4 +11,4 @@
 
 ## progress bar
 플래그를 주어서 mousedown 이나 클릭일떄만 진행바를 움직일 수 있도록 한다.\
-현재 progress bar 색상은  `flex-basis`퍼센트값을 보여주는 것이기 때문에, 클릭한 offsetX 값을 progress의 offsetWidth와 나누고, 비디오 시간을 곲하여 나온 값을 비디오 현재 시간에 넣어준다.
+현재 progress bar 색상은  `flex-basis`퍼센트값을 보여주는 것이기 때문에, 클릭한 offsetX 값을 progress의 offsetWidth와 나누고, 비디오 시간을 곱하여 나온 값을 비디오 현재 시간에 넣어준다.
