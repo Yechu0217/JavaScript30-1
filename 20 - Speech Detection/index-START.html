@@ -11,8 +11,39 @@
 
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  
+  const recognition = new SpeechRecognition()
+  recognition.interimResults = true
 
+  let p = document.createElement('p')
+  const words = document.querySelector('.words')
+  words.appendChild(p)
 
+  recognition.addEventListener('result', e=>{
+    //console.log(e.results)
+    const transcipt = Array.from(e.results)
+    .map(result=> result[0])
+    .map(result=> result.transcript)
+    .join('') //두번 나올떄 있으니까 쪼인해줌 
+    
+
+    p.textContent= transcipt
+
+    if(e.results[0].isFinal){
+      p =document.createElement('p')
+      words.appendChild(p)
+    }
+    if(transcipt.includes('안녕')){
+      p = document.createElement('p')
+      p.textContent = '🤗 🤗 🤗 🤗 🤗 🤗 🤗 🤗'
+      words.appendChild(p)
+    }
+  })
+
+  //끝나면 다시 호출해줘야 댐 안하면 한번시작하고 끝나면 멈춤
+  recognition.addEventListener('end', recognition.start)
+
+  recognition.start()
 </script>
 
 
