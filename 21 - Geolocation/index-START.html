@@ -32,7 +32,8 @@
         radial-gradient(black 15%, transparent 16%) 8px 8px,
         radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
         radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-      background-color: #282828;
+     
+        background-color: #282828;
       background-size: 16px 16px;
       background-attachment: fixed;
     }
@@ -59,6 +60,18 @@
     /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
   </style>
   <script>
+
+    const arrow = document.querySelector('.arrow')
+    const speed = document.querySelector('.speed-value')
+
+    navigator.geolocation.watchPosition(data=> {
+      //success callback
+      speed.textContent = data.coords.speed
+      arrow.style.transform =`rotate(${data.coords.heading}deg)`
+    }, err=> {
+      //error callback
+      console.log(err)
+    }) 
   </script>
 </body>
 </html>
