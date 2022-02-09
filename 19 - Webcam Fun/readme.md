@@ -4,7 +4,7 @@ yarn install해서 서버 시작하기(browser-sync package.json에 포함되어
 
 # 비디오 가져오기
 [Using object URLs - mozilla](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#example_using_object_urls_to_display_images)\
-강의 내용 그대로 하면 안되고, 바뀌어서 `mediaStream` 의 경우 `ideo.srcObject` 에 바로 할당해야함 
+강의 내용 그대로 하면 안되고, 바뀌어서 `mediaStream` 의 경우 `video.srcObject` 에 바로 할당해야함 
 
 # 캔버스
 캔버스가 비디오 사이즈와 같아야함\
