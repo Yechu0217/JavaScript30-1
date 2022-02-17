@@ -3,13 +3,13 @@
 ## 기본
 `setInterval()` 를 사용하여 1초마다 원하는 함수를 호출하여 화면을 업데이트 해준다
 
-## name property
+## name attribute
 ```html
   <form name="customForm" id="custom">
    <input type="text" name="minutes" placeholder="Enter Minutes">
  </form>
 ```
-이렇게 name property가 있는 태그는 스크립트에서 바로 접근할 수 있다.\
+이렇게 name attribute가 있는 태그는 스크립트에서 바로 접근할 수 있다.\
 다음과 같이...
 ```js
 document.customForm.addEventListener()
